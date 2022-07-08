@@ -139,8 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BOGGLE.cpp" />
-    <ClCompile Include="PICNIC.cpp" />
+    <ClCompile Include="Algorithm Strategies\BOGGLE.cpp" />
+    <ClCompile Include="Algorithm Strategies\PICNIC.cpp" />
+    <ClCompile Include="Baekjoon\소스.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

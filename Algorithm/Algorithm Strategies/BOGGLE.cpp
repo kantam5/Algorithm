@@ -67,9 +67,9 @@ bool HasWord(int y, int x, const string& word)
     return false;
 }
 
-int main()
-{
-    string word = "xoqrs";
-
-    cout << StartFind(0, 0, word) << endl;
-}
+//int main()
+//{
+//    string word = "xoqrs";
+//
+//    cout << StartFind(0, 0, word) << endl;
+//}

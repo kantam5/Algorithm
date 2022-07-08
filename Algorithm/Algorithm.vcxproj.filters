@@ -16,13 +16,19 @@
     <Filter Include="소스 파일\Algorithm Strategies">
       <UniqueIdentifier>{5e9ac9ac-294a-4035-9457-678a0a263771}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Baekjoon">
+      <UniqueIdentifier>{eaf5df70-dee9-41bd-8f28-e159abff6a90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BOGGLE.cpp">
+    <ClCompile Include="Algorithm Strategies\BOGGLE.cpp">
       <Filter>소스 파일\Algorithm Strategies</Filter>
     </ClCompile>
-    <ClCompile Include="PICNIC.cpp">
+    <ClCompile Include="Algorithm Strategies\PICNIC.cpp">
       <Filter>소스 파일\Algorithm Strategies</Filter>
+    </ClCompile>
+    <ClCompile Include="Baekjoon\소스.cpp">
+      <Filter>소스 파일\Baekjoon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
