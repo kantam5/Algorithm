@@ -33,7 +33,7 @@ int main()
 
     cout << min << " " << max;
 
-    delete[] array; 
+    delete[] array;
 
     return 0;
 }

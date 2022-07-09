@@ -27,8 +27,5 @@
     <ClCompile Include="Algorithm Strategies\PICNIC.cpp">
       <Filter>소스 파일\Algorithm Strategies</Filter>
     </ClCompile>
-    <ClCompile Include="Baekjoon\소스.cpp">
-      <Filter>소스 파일\Baekjoon</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
