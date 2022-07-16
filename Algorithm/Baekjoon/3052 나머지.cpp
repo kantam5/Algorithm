@@ -15,6 +15,7 @@ int main()
         div_vector.push_back(arr[i] % 42);
     }
 
+    // 중복값 삭제
     sort(div_vector.begin(), div_vector.end());
     div_vector.erase(unique(div_vector.begin(), div_vector.end()), div_vector.end());
 
