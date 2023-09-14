@@ -5,10 +5,12 @@
 
 using namespace std;
 
+// 정진교
 int part(int number)
 {
     int sum = number;
 
+    // 자릿수에 해당하는 값을 더하는 부분
     while (number)
     {
         sum += number % 10;
