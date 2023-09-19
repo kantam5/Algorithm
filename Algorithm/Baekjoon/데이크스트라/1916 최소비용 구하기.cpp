@@ -21,23 +21,30 @@ vector<int>d;
 void dijkstra(int start)
 {
     d[start] = 0;
-    priority_queue<pair<int, int>> q;
+    priority_queue<pair<int, int>> q;                       // 우선순위 큐, 거리가 가장 짧은 것 우선으로 뱉기위해 거리에 -가 붙는다.
     q.push(make_pair(0, start));
+
     while (!q.empty())
     {
-        int now = q.top().second;
-        int dis = -q.top().first;
+        int now = q.top().second;                           // 현재 비교할 노드 now
+        int dis = -q.top().first;                           // now까지의 거리
         q.pop();
-        if (d[now] < dis)continue;
 
+        // 갱신 안됨
+        if (d[now] < dis)
+        {
+            continue;
+        }
+
+        // 현재 노드에 연결된 간선들에 대해 계산
         for (int i = 0; i < atob[now].size(); i++)
         {
-            int next = atob[now][i].second;
-            int NextDistance = dis + atob[now][i].first;
-            if (NextDistance < d[next])
+            int next = atob[now][i].second;                 // 현재 노드에 연결된 노드 중 하나
+            int NextDistance = dis + atob[now][i].first;    // 현재 노드를 경우해서 next에 도달했을 때의 거리
+            if (NextDistance < d[next])                     // 갱신 가능
             {
-                d[next] = NextDistance;
-                q.push(make_pair(-NextDistance, next));
+                d[next] = NextDistance;                     // start에서 next까지의 거리 갱신
+                q.push(make_pair(-NextDistance, next));     // 우선순위 큐에 갱신된 값을 집어넣어 다시 비교
             }
         }
     }
