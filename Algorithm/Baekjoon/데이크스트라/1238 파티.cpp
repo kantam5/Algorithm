@@ -202,6 +202,7 @@ int main()
         reverse_edges[n2 - 1].push_back(make_pair(dist, n1 - 1));
     }
 
+    // N명 만큼 다익스트라 계산
     /*for (int i = 0; i < N; ++i)
     {
         dijkstra(i);
