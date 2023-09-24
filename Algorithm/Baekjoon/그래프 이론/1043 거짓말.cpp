@@ -18,6 +18,7 @@ vector<int> knowns;
 vector<int> parties[51];
 int parent[51];
 
+// 노드의 부모 노드를 반환
 int getParent(int n)
 {
     if (parent[n] == n)
@@ -28,6 +29,7 @@ int getParent(int n)
     return getParent(parent[n]);
 }
 
+// 노드의 부모를 서로 연결하여 같은 집합에 속하게 한다.
 void Union(int n1, int n2)
 {
     n1 = getParent(n1);
@@ -73,6 +75,7 @@ int main()
             }
             else
             {
+                // 같은 파티에 참여한 사람끼리 같은 집합에 속하도록 한다.
                 prev = current;
                 cin >> current;
                 Union(prev, current);
@@ -95,6 +98,7 @@ int main()
 
             for (int known : knowns)
             {
+                // 파티에 참가한 사람들 중 한명이라도 사실을 아는 집합에 속해있다면 지민이는 참여할 수 없다.
                 if (getParent(person) == getParent(known))
                 {
                     flag = true;
