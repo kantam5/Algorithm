@@ -10,27 +10,11 @@
 #include <unordered_map>
 #include <cmath>
 #include <deque>
+#include <climits>
+
+const int MOD = 1'000'000'007;
 
 using namespace std;
-
-long long solution(long long A, long long B, long long C)
-{
-    long long result = 1;
-
-    while (B > 0)
-    {
-        if (B % 2 == 1)
-        {
-            result = (result * A) % C;
-            // result = ((result % C) * (A % C)) % C;
-        }
-        B /= 2;
-
-        A = ((A % C) * (A % C)) % C;
-    }
-
-    return result;
-}
 
 // a를 b번 곱하고 c로 나눈 값
 long long power(long long a, long long b, long long c)
@@ -61,16 +45,26 @@ long long power(long long a, long long b, long long c)
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
 
-    long long A;
-    long long B;
-    long long C;
-    cin >> A >> B >> C;
+    int M;
+    long long answer = 0;
 
-    cout << solution(A, B, C) << endl;
+    cin >> M;
+
+    while (M--)
+    {
+        long long N, S;
+        cin >> N >> S;
+
+        // b^(-1)이 b^(MOD - 2)이므로 
+        // b^(MOD - 2)를 구하고 S를 곱해서 MOD연산
+        answer += power(N, MOD - 2, MOD) * S % MOD;
+    }
+
+    answer %= MOD;
+    cout << answer;
 
     return 0;
 }
