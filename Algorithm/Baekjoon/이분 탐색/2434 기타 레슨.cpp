@@ -37,7 +37,7 @@ int main()
         total_time += lesson;
     }
 
-    // 블루레이 크기의 최솟값은 lesson 중 가장 짧은 시간이다.
+    // 블루레이 크기의 최솟값은 lesson 중 가장 긴 시간이다.
     int start = maxi;
     // 블루레이 크기의 최댓값은 lesson 시간의 총 합이다.
     int end = total_time;
@@ -66,7 +66,7 @@ int main()
         {
             start = mid + 1;
         }
-        // 이하라면 answer를 갱신하고 블루레이 시간을 줄인다.
+        // M 이하라면 answer를 갱신하고 블루레이 시간을 줄인다.
         else
         {
             answer = min(answer, mid);
