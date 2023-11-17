@@ -55,6 +55,7 @@ int main()
             int temp_circle[51];
             for (int j = 0; j < M; ++j)
             {
+                // 원판은 연결되어 있다는 것을 주의
                 int move = k % M;
                 int next;
                 if (d == 0)
