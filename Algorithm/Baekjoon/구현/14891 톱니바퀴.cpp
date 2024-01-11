@@ -70,50 +70,50 @@ int main()
 
     for (int i = 0; i < K; ++i)
     {
-        int current_gear = order[i].first;
-        int current_dir = order[i].second;
+        int order_gear = order[i].first;
+        int order_dir = order[i].second;
 
         // 현재 order에서 회전시킬 기어들
         vector<pair<int, int>> move_gear;
-        move_gear.push_back(make_pair(current_gear, current_dir));
+        move_gear.push_back(make_pair(order_gear, order_dir));
 
         // 현재 기어의 오른쪽 기어들 탐색
-        for (int j = current_gear + 1; j < 4; ++j)
+        for (int current_gear = order_gear + 1; current_gear < 4; ++current_gear)
         {
-            // j번 기어와 j 바로 왼쪽 기어의 상태를 비교
-            if (gear[j - 1][2] != gear[j][6])
+            // 현재 기어와 현재 기어 바로 왼쪽 기어의 상태를 비교
+            if (gear[current_gear - 1][2] != gear[current_gear][6])
             {
                 // 돌릴 방향은 현재 기어와의 위치에 따라 다르다.
-                if ((current_gear + j) % 2 == 0)
+                if ((order_gear + current_gear) % 2 == 0)
                 {
-                    move_gear.push_back(make_pair(j, current_dir));
+                    move_gear.push_back(make_pair(current_gear, order_dir));
                 }
                 else
                 {
-                    move_gear.push_back(make_pair(j, (-1) * current_dir));
+                    move_gear.push_back(make_pair(current_gear, (-1) * order_dir));
                 }
             }
             else
             {
-                // j번 기어가 돌아가지 않는다면 j + 1번 기어도 돌아가지 않는다.
+                // 현재 기어가 돌아가지 않는다면 현재 기어 + 1번 기어도 돌아가지 않는다.
                 break;
             }
         }
 
         // 현재 기어의 왼쪽 기어들 탐색
-        for (int j = current_gear - 1; j >= 0; --j)
+        for (int current_gear = order_gear - 1; current_gear >= 0; --current_gear)
         {
-            // j번 기어와 j 바로 오른쪽 기어의 상태를 비교
-            if (gear[j + 1][6] != gear[j][2])
+            // 현재 기어와 현재 기어 바로 오른쪽 기어의 상태를 비교
+            if (gear[current_gear + 1][6] != gear[current_gear][2])
             {
                 // 돌릴 방향은 현재 기어와의 위치에 따라 다르다.
-                if ((current_gear + j) % 2 == 0)
+                if ((order_gear + current_gear) % 2 == 0)
                 {
-                    move_gear.push_back(make_pair(j, current_dir));
+                    move_gear.push_back(make_pair(current_gear, order_dir));
                 }
                 else
                 {
-                    move_gear.push_back(make_pair(j, (-1) * current_dir));
+                    move_gear.push_back(make_pair(current_gear, (-1) * order_dir));
                 }
             }
             else
