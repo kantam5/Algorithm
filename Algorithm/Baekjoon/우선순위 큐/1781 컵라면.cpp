@@ -33,6 +33,7 @@ int main()
         int deadline, value;
         cin >> deadline >> value;
 
+        // deadline까지 풀 수 있는 문제
         values[deadline].push_back(value);
     }
 
