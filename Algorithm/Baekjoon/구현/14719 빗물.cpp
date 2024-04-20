@@ -37,20 +37,19 @@ int main(void) {
 		int left_maxi = 0;
 		int right_maxi = 0;
 
+		// 현재 칸에서 왼쪽에 위치한 블록들 중 최고 높이
 		for (int j = i - 1; j >= 0; --j)
 		{
 			left_maxi = max(left_maxi, ground[j]);
 		}
 
+		// 현재 칸에서 오른쪽에 위치한 블록들 중 최고 높이
 		for (int j = i + 1; j < W; ++j)
 		{
 			right_maxi = max(right_maxi, ground[j]);
 		}
 
-		if (left_maxi > ground[i] && right_maxi > ground[i])
-		{
-			answer += (min(left_maxi, right_maxi) - ground[i]);
-		}
+		answer += max(0, min(left_maxi, right_maxi) - ground[i]);
 	}
 
 	cout << answer;
