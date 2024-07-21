@@ -58,10 +58,12 @@ int main(void) {
         int n;
         cin >> n;
 
+        // n / 2 부터 탐색 시작
         int start = n / 2;
 
         for (int i = start; start >= 2; --start)
         {
+            // start와 n - start가 소수라면 정답이므로 바로 break
             if (prime[start] == true && prime[n - start] == true)
             {
                 cout << start << " " << n - start << '\n';
